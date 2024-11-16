@@ -4,22 +4,10 @@
   "keywords": [ "nzb", "usenet", "grabber", "leecher", "download", "nntp", "yenc" ],
   "author": "Radek <dev@radekstepan.com>",
   "dependencies": {
-    "coffee-script": "~1.9.1",
     "async": "~0.9.0",
     "buffer-crc32": "~0.2.5",
     "xml2js": "0.6.2",
-    "node-logging": "0.1.6",
-    "watchr": "~2.4.13"
-  },
-  "devDependencies": {
-    "mocha": "~2.1.0"
-  },
-  "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script/register --reporter spec --ui exports --timeout 5000 --slow 2000 --bail"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/radekstepan/nzb-grabber-js.git"
+    "node-logging": "0.1.6"
   },
   "main": "./index.js"
 }

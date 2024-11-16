@@ -1,3 +1,1 @@
-#!/usr/bin/env node
-require('coffee-script/register');
-module.exports = require('./src/grabber.coffee');
+module.exports = require('./src/grabber.js');
