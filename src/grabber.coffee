@@ -4,7 +4,6 @@ log         = require 'node-logging'
 NNTPWorker  = require './nntp.coffee'
 nzb         = require './nzb.coffee'
 yenc        = require './yenc.coffee'
-buffertools = require 'buffertools'
 
 class NzbGrabber
 

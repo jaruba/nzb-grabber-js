@@ -3,7 +3,6 @@ net         = require 'net'
 log         = require 'node-logging'
 stream      = require 'stream'
 async       = require 'async'
-buffertools = require 'buffertools'
 
 # Just a counter of workers created.
 id = 0
@@ -150,7 +149,7 @@ class NNTPWorker
         # Remove headers and the trailing dot on input.
         removeHeaders = (input) ->
             length = input.length
-            input.slice buffertools.indexOf(input, '\r\n\r\n') + 4, length - 3
+            input.slice input.indexOf('\r\n\r\n') + 4, length - 3
 
         # What mode are we in?
         switch @mode
