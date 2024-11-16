@@ -34,8 +34,10 @@ module.exports = (input) ->
                     buffer = buffer.slice 0, i
                     # Do we have a CRC check?
                     if pcrc32 = new Buffer(line).toString().match /pcrc32\=([^\s]*)/
-                        if (calc = (crc32.unsigned(buffer)).toString(16)) isnt pcrc32[1]
-                            log.err 'File ' + filename.bold + " crc fail, expected #{pcrc32[1]} got #{calc}"
+                        calc = (crc32.unsigned(buffer)).toString(16).toLowerCase().replace(/^0+/, '')
+                        calc2 = pcrc32[1].toLowerCase().replace(/^0+/, '')
+                        if calc isnt calc2
+                            log.err 'File ' + filename.bold + " crc fail, expected #{calc2} got #{calc}"
 
             return
 
